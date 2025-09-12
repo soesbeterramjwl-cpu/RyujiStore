@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ryuji Top Up Mobile Legends</title>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Baloo+2:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#6b3af0; --card:#ffffff; --accent:#ff86b0; --muted:#4b2bb3;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:'Baloo 2',system-ui,sans-serif;
+      background:linear-gradient(135deg,var(--bg1),#7b4df8 30%,#4f38f8 70%);
+      color:#fff;
+    }
+    .wrap{max-width:1000px; margin:24px auto; padding:28px}
+    header{text-align:center}
+    h1{font-family:'Luckiest Guy',cursive; font-size:54px; margin:0; text-shadow:4px 4px 0 rgba(0,0,0,.3)}
+    .subtitle{background:rgba(255,255,255,0.1); padding:8px 20px; border-radius:14px; font-size:24px; margin-top:10px}
+    .owner{margin-top:8px; font-weight:700; color:#ffd; font-size:18px}
+
+    .panel{background:rgba(255,255,255,0.08); border-radius:20px; padding:20px; margin:20px 0}
+    .panel h2{text-align:center;margin:0 0 14px}
+    .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:14px}
+    .card{background:var(--card); color:var(--muted); padding:16px; border-radius:14px; cursor:pointer; text-align:center; font-weight:700; transition:transform .15s}
+    .card:hover{transform:scale(1.05)}
+    .price{color:var(--accent); margin-top:6px; font-weight:800}
+
+    .wa-note{text-align:center; font-size:14px; margin-top:10px}
+
+    /* modal */
+    .modal{position:fixed; inset:0; background:rgba(0,0,0,.6); display:flex; align-items:center; justify-content:center; visibility:hidden; opacity:0; transition:.2s}
+    .modal.show{visibility:visible; opacity:1}
+    .modal-content{background:#fff; color:#000; border-radius:14px; padding:20px; width:90%; max-width:420px}
+    .modal-content h2{margin:0 0 12px; font-size:20px}
+    .modal-content label{display:block; margin:10px 0 4px; font-weight:600}
+    .modal-content input, .modal-content select{
+      width:100%; padding:10px; border:1px solid #ccc; border-radius:8px;
+    }
+    .modal-actions{margin-top:16px; text-align:right}
+    .modal-actions button{padding:10px 16px; border:none; border-radius:8px; font-weight:600; cursor:pointer}
+    .btn-cancel{background:#ccc}
+    .btn-ok{background:var(--bg1); color:#fff}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Mobile Legends Top Up</h1>
+      <div class="subtitle">Daftar Harga</div>
+      <div class="owner">Website by Ryuji</div>
+    </header>
+
+    <!-- WDP Section -->
+    <section class="panel">
+      <h2>WDP</h2>
+      <div class="grid">
+        <div class="card" data-item="WDP 1x" data-price="Rp 29.000">WDP 1x<div class="price">Rp 29.000</div></div>
+        <div class="card" data-item="WDP 2x" data-price="Rp 57.000">WDP 2x<div class="price">Rp 57.000</div></div>
+        <div class="card" data-item="WDP 3x" data-price="Rp 86.000">WDP 3x<div class="price">Rp 86.000</div></div>
+        <div class="card" data-item="WDP 4x" data-price="Rp 114.000">WDP 4x<div class="price">Rp 114.000</div></div>
+      </div>
+    </section>
+
+    <!-- Diamond Section -->
+    <section class="panel">
+      <h2>Diamond</h2>
+      <div class="grid">
+        <div class="card" data-item="3 Diamond" data-price="Rp 1.500">3 Diamond<div class="price">Rp 1.500</div></div>
+        <div class="card" data-item="5 Diamond" data-price="Rp 2.000">5 Diamond<div class="price">Rp 2.000</div></div>
+        <div class="card" data-item="20 Diamond" data-price="Rp 7.000">20 Diamond<div class="price">Rp 7.000</div></div>
+        <div class="card" data-item="50 Diamond" data-price="Rp 15.000">50 Diamond<div class="price">Rp 15.000</div></div>
+        <div class="card" data-item="74 Diamond" data-price="Rp 21.000">74 Diamond<div class="price">Rp 21.000</div></div>
+        <div class="card" data-item="86 Diamond" data-price="Rp 25.000">86 Diamond<div class="price">Rp 25.000</div></div>
+        <div class="card" data-item="122 Diamond" data-price="Rp 35.000">122 Diamond<div class="price">Rp 35.000</div></div>
+        <div class="card" data-item="140 Diamond" data-price="Rp 40.000">140 Diamond<div class="price">Rp 40.000</div></div>
+        <div class="card" data-item="170 Diamond" data-price="Rp 48.000">170 Diamond<div class="price">Rp 48.000</div></div>
+        <div class="card" data-item="220 Diamond" data-price="Rp 62.000">220 Diamond<div class="price">Rp 62.000</div></div>
+        <div class="card" data-item="257 Diamond" data-price="Rp 72.000">257 Diamond<div class="price">Rp 72.000</div></div>
+        <div class="card" data-item="333 Diamond" data-price="Rp 92.000">333 Diamond<div class="price">Rp 92.000</div></div>
+        <div class="card" data-item="333 Diamond" data-price="Rp 92.000">333 Diamond<div class="price">Rp 92.000</div></div>
+      </div>
+      <div class="wa-note">Klik paket, masukkan User ID & Zone ID, pilih metode pembayaran, lalu WhatsApp akan terbuka.</div>
+    </section>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="idModal">
+    <div class="modal-content">
+      <h2>Masukkan Data</h2>
+      <label for="userId">User ID</label>
+      <input type="number" id="userId" placeholder="Contoh: 123456789">
+      <label for="zoneId">Zone ID</label>
+      <input type="number" id="zoneId" placeholder="Contoh: 1234">
+      <label for="payment">Metode Pembayaran</label>
+      <select id="payment">
+        <option value="DANA">DANA</option>
+        <option value="Cash">Cash</option>
+        <option value="QRIS">QRIS</option>
+      </select>
+      <div class="modal-actions">
+        <button class="btn-cancel" id="cancelBtn">Batal</button>
+        <button class="btn-ok" id="okBtn">Lanjut</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const WA_NUMBER = '6285389408814';
+    let selectedItem = '', selectedPrice = '';
+
+    function openModal(item, price){
+      selectedItem = item; selectedPrice = price;
+      document.getElementById('idModal').classList.add('show');
+    }
+    function closeModal(){document.getElementById('idModal').classList.remove('show');}
+
+    function sendWhatsApp(){
+      const userId = document.getElementById('userId').value.trim();
+      const zoneId = document.getElementById('zoneId').value.trim();
+      const payment = document.getElementById('payment').value;
+      if(!userId || !zoneId){alert("Isi User ID dan Zone ID!"); return;}
+      const message = `Halo, saya mau beli ${selectedItem} (${selectedPrice}).\nID: ${userId}\nZone ID: ${zoneId}\nMetode Pembayaran: ${payment}`;
+      const url = `https://wa.me/${WA_NUMBER}?text=` + encodeURIComponent(message);
+      window.open(url,'_blank'); closeModal();
+    }
+
+    document.querySelectorAll('.card').forEach(c=>{
+      c.addEventListener('click',()=>{openModal(c.dataset.item,c.dataset.price);});
+    });
+    document.getElementById('cancelBtn').addEventListener('click',closeModal);
+    document.getElementById('okBtn').addEventListener('click',sendWhatsApp);
+  </script>
+</body>
+</html>
